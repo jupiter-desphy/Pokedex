@@ -5,46 +5,55 @@ import { useParams, Link } from "react-router-dom";
 export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
     let [list, setList] = useState([]);
-    let { id } = useParams();
-    let [count, setCount] = useState(Number(id))
 
-    function catchPokemon() {
+    // let { id } = useLocation();
+    let { id } = useParams();
+    let [count, setCount] = useState(Number(id));
+
+    /*function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())
             .then((pokemon) => {
                 setItem(pokemon.pokemon.find((poke) => poke.id == count));
-                setList(pokemon.pokemon)
-
+                setList(pokemon.pokemon);
             })
-            
             .catch((err) => console.error(err));
+    }*/
+
+    function catchPokemon() {
+        setItem(list.find((poke) => poke.id == count));
+    }
+
+    async function fetchPokemon() {
+        let res = await fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
+        let data = await res.json();
+        setList(data.pokemon)
     }
 
     useEffect(() => {
-        catchPokemon();
-    }, []);
+        if (list.length == 0) fetchPokemon();
+        else catchPokemon();
+    }, [count, list]);
 
     function nextPokemon() {
-        if (count > 151) {
+        if (count >= 151) {
             setCount(1);
         } else {
             setCount(count + 1);
-            catchPokemon();
         }
     }
 
     function lastPokemon() {
-        if (count < 1) {
+        if (count == 1) {
             setCount(151);
         } else {
             setCount(count - 1);
-            catchPokemon();
         }
     }
 
     function randomPokemon() {
         setCount(Math.floor(Math.random() * 151) + 1);
-        catchPokemon()
+ 
     }
 
 
@@ -113,19 +122,6 @@ export function SinglePokemonPage(props) {
                     {/* </Link>  */}
                 </div>
             </div>
-            {/* <div>
-                <ul>
-                    {item?.map((item) => {
-                        return (
-                            <li key={item.id}>
-                                <Link to={`/pokemon/${item.id}`}>
-                                {item.name}
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div> */}
         </div>
     );
 }

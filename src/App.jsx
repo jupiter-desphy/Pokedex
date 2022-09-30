@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/allpokemon" element={<AllPokemonPage />} />
-        <Route path="pokemon/:id" element={<SinglePokemonPage />} />
+        <Route exact path="pokemon/:id" element={<SinglePokemonPage />} />
       </Routes>
     </BrowserRouter>
   );

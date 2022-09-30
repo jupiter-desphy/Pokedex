@@ -6,9 +6,11 @@ export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
     let [list, setList] = useState([]);
 
-    // let { id } = useLocation();
     let { id } = useParams();
     let [count, setCount] = useState(Number(id));
+
+    // let { state } = useLocation();
+    // let [count, setCount] = useState(Number(state.id || 1));
 
     /*function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)

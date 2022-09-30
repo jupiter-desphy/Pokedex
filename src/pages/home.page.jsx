@@ -1,36 +1,47 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function HomePage(props) {
     let [list, setList] = useState(["ready", "set", "GO!"]);
     let [text, setText] = useState([""]);
 
-    function onSubmit(event) {
-        event.preventDefault();
-
-        let newList = [...list, text];
-        setList(newList);
-        setText("");
-    }
 
     return (
-        <div className="App">
-            <header className="App-header">
+        <div id="homePage">
+        
+            <div id="pokedexLogo">
+                <Link to={`/allpokemon`}>
+                    <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
+                </Link>
+            </div>
+            <div id="byJupiter">              
+                by jupiter
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </div>  
+            <header>
                 <h1>Hello World</h1>
-                <form onSubmit={onSubmit}>
-                    <input
-                        type="text"
-                        name="text"
-                        id="text"
-                        value={text}
-                        onChange={(event) => setText(event.target.value)}
-                    />
-                    <button type="submit">Add</button>
-                </form>
-                <ul>
-                    {list.map((item, idx) => {
-                        return <li key={item + idx}>{item}</li>;
-                    })}
-                </ul>
+                <div>
+                    <br></br>
+                    <p>
+                        Welcome to my Pokedex app!
+                        <br></br>
+                        <br></br>
+                        {/* If you're a fan of Pokemon, */}
+
+                        <br></br>
+                        <br></br>
+                        <Link to={`/allpokemon`}>Enter Here</Link>
+                    </p>
+                </div>
+
+
             </header>
         </div>
     );

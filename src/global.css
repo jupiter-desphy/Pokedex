@@ -13,6 +13,32 @@
   font-family:'Press Start 2P', cursive;
 }
 
+/* -- LOGO -- */
+
+#pokedexLogo {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  justify-self: center;
+  margin: 3.5rem 3rem 2rem 2rem;
+  margin-right: 3rem;
+}
+
+/* -- HOME PAGE -- */
+
+#homePage {
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#byJupiter {
+  text-align: center;
+}
+
+/* -- POKEMON POSTER PAGE -- */
+
 #allPokemon {
   align-items: left;
   max-width: 1126px;
@@ -72,15 +98,6 @@ body {
 
 #PokedexPage {
   font-family:'Press Start 2P', cursive;
-}
-
-#pokedexLogo {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  justify-self: center;
-  margin: 3.5rem 3rem 2rem 2rem;
-  margin-right: 3rem;
 }
 
 #logoImg {

@@ -16,7 +16,7 @@ export function AllPokemonPage(props) {
     useEffect(() => {
         catchEmAll();
     }, []);
-console.log("this is the list", list);
+
     let pokemonByName = filterPokemonByName (list, searchPokemon)
     let names = getListOf(list, "name");
     // let { avg_score, total, latest } = getFilmStats(pokemonByName);
@@ -46,20 +46,7 @@ console.log("this is the list", list);
                     </select>
                 </div>
             </form>
-            <div>
-                <div>
-                    <span># Of Films</span>
-                    {/* <span>{total}</span> */}
-                </div>
-                <div>
-                    <span>Average Rating</span>
-                    {/* <span>{avg_score.toFixed(2)}</span> */}
-                </div>
-                <div>
-                    <span>Latest Film</span>
-                    {/* <span>{latest}</span> */}
-                </div>
-            </div>
+            
             <ul>
                 {pokemonByName.map((pokemon) => {
                     return (

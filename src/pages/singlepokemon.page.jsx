@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
-import { useParams , Link} from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 
 export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
-
     let { id } = useParams();
+    const [count, setCount] = useState (+id)
 
     function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())
-            .then((pokemon) => setItem(pokemon.pokemon.find((poke) => poke.id == id)))
+            .then((pokemon) => setItem(pokemon.pokemon
+                .find(
+                (poke) => {
+                    console.log(poke.id)
+                    return poke.id == count
+                })))
             .catch((err) => console.error(err));
     }
 
@@ -18,12 +23,30 @@ export function SinglePokemonPage(props) {
         catchPokemon();
     }, []);
 
-    // let weaknesses = getListOf(list, "weaknesses");
+    function nextPokemon () {
+        if (count == 152) {
+            setCount(count -151)
+        } else {
+        setCount (count + 1);
+        catchPokemon()
+        }
+    }
+
+    function lastPokemon () {
+        if (count == 1) {
+            setCount(count +150)
+        } else {
+        setCount (count - 1);
+        catchPokemon()
+        }
+    }
+
+
 
     return (
         <div>
             <div id="pokedexLogo">
-            <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg'/>
+                <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
             </div>
             <div style={{ backgroundImage: "url(/pokedexImg.png)" }} id="pokedex">
                 <div id="mainScreen">
@@ -64,10 +87,35 @@ export function SinglePokemonPage(props) {
                     </ul>
                 </div>
                 <div id="dirPadRight" className="dirPad">
-                    
-                    <Link to={`/pokemon/${item.id+1}`}><button>{`/pokemon/${item.id+1}`}</button></Link>
+                        <button id="dirPadRightButton" onClick={nextPokemon}>
+                        </button>
+                </div>
+                <div id="dirPadLeft" className="dirPad">
+                    <button id="dirPadLeftButton" onClick={lastPokemon}></button>
+                </div>
+                <div id="dirPadUp" className="dirPad">
+                    <button id="dirPadUpButton" onClick={nextPokemon}></button>
+                </div>
+                <div id="dirPadDown" className="dirPad">
+                    <button id="dirPadDownButton" onClick={lastPokemon}></button>
+                </div>
+                <div>
+                <Link to={`/Allpokemon/`}><button id="HomeButton"></button></Link>
                 </div>
             </div>
+            {/* <div>
+                <ul>
+                    {item?.map((item) => {
+                        return (
+                            <li key={item.id}>
+                                <Link to={`/pokemon/${item.id}`}>
+                                {item.name}
+                                </Link>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div> */}
         </div>
     );
 }

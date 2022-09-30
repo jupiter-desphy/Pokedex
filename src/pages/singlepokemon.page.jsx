@@ -5,17 +5,12 @@ import { useParams, Link } from "react-router-dom";
 export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
     let { id } = useParams();
-    const [count, setCount] = useState(+id)
+    let [count, setCount] = useState(Number(id))
 
     function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())
-            .then((pokemon) => setItem(pokemon.pokemon
-                .find(
-                    (poke) => {
-                        console.log(poke.id)
-                        return poke.id == count
-                    })))
+            .then((pokemon) => setItem(pokemon.pokemon.find((poke) => poke.id == count)))
             .catch((err) => console.error(err));
     }
 
@@ -24,27 +19,32 @@ export function SinglePokemonPage(props) {
     }, []);
 
     function nextPokemon() {
-        if (count == 152) {
-            setCount(count - 151)
+        if (count > 151) {
+            setCount(1);
         } else {
             setCount(count + 1);
-            catchPokemon()
+            catchPokemon();
         }
     }
 
     function lastPokemon() {
-        if (count == 1) {
-            setCount(count + 150)
+        if (count < 1) {
+            setCount(151);
         } else {
             setCount(count - 1);
-            catchPokemon()
+            catchPokemon();
         }
+    }
+
+    function randomPokemon() {
+        setCount(Math.floor(Math.random() * 151) + 1);
+        catchPokemon()
     }
 
 
 
     return (
-        <div>
+        <div id="PokedexPage">
             <div id="pokedexLogo">
                 <Link to={`/Allpokemon`}>
                     <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
@@ -102,9 +102,9 @@ export function SinglePokemonPage(props) {
                     <button id="dirPadDownButton" onClick={lastPokemon}></button>
                 </div>
                 <div id="homeButtonDiv">
-                    <Link to={`/Allpokemon`}>
-                        <button id="homeButton"></button>
-                    </Link>
+                    {/* <Link to={`/Allpokemon`}> */}
+                        <button id="homeButton" onClick={randomPokemon}></button>
+                    {/* </Link>  */}
                 </div>
             </div>
             {/* <div>

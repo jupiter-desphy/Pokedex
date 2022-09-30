@@ -65,6 +65,7 @@ code {
 
 #allPokemon {
   align-items: left;
+  max-width: 1126px;
 }
 
 ul {
@@ -189,16 +190,18 @@ justify-self: center;
   grid-column: 10 / 11;
   grid-row: 3 / 4;
   /* align-self: center; */
-  justify-self: center;
+  justify-self: start;
   color: var(--green-font);
+  padding-left: 13px;
 }
 
 #weaknessScreen {
   grid-column: 11 / 13;
   grid-row: 3 / 4;
-  justify-self: center;
+  justify-self: start;
   font-size: .7rem;
   color: var(--green-font);
+  padding-left: 15px;
 }
 
 button {

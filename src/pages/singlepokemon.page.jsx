@@ -5,17 +5,17 @@ import { useParams, Link } from "react-router-dom";
 export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
     let { id } = useParams();
-    const [count, setCount] = useState (+id)
+    const [count, setCount] = useState(+id)
 
     function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())
             .then((pokemon) => setItem(pokemon.pokemon
                 .find(
-                (poke) => {
-                    console.log(poke.id)
-                    return poke.id == count
-                })))
+                    (poke) => {
+                        console.log(poke.id)
+                        return poke.id == count
+                    })))
             .catch((err) => console.error(err));
     }
 
@@ -23,21 +23,21 @@ export function SinglePokemonPage(props) {
         catchPokemon();
     }, []);
 
-    function nextPokemon () {
+    function nextPokemon() {
         if (count == 152) {
-            setCount(count -151)
+            setCount(count - 151)
         } else {
-        setCount (count + 1);
-        catchPokemon()
+            setCount(count + 1);
+            catchPokemon()
         }
     }
 
-    function lastPokemon () {
+    function lastPokemon() {
         if (count == 1) {
-            setCount(count +150)
+            setCount(count + 150)
         } else {
-        setCount (count - 1);
-        catchPokemon()
+            setCount(count - 1);
+            catchPokemon()
         }
     }
 
@@ -46,7 +46,9 @@ export function SinglePokemonPage(props) {
     return (
         <div>
             <div id="pokedexLogo">
-                <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
+                <Link to={`/Allpokemon`}>
+                    <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
+                </Link>
             </div>
             <div style={{ backgroundImage: "url(/pokedexImg.png)" }} id="pokedex">
                 <div id="mainScreen">
@@ -81,14 +83,14 @@ export function SinglePokemonPage(props) {
                         <u>WEAKNESSES</u>
                         <br></br>
                         <br></br>
-                        {item.weaknesses?.slice(0,4).map((weakness, idx) => {
+                        {item.weaknesses?.slice(0, 4).map((weakness, idx) => {
                             return <li key={idx}>{weakness}</li>;
                         })}
                     </ul>
                 </div>
                 <div id="dirPadRight" className="dirPad">
-                        <button id="dirPadRightButton" onClick={nextPokemon}>
-                        </button>
+                    <button id="dirPadRightButton" onClick={nextPokemon}>
+                    </button>
                 </div>
                 <div id="dirPadLeft" className="dirPad">
                     <button id="dirPadLeftButton" onClick={lastPokemon}></button>
@@ -100,7 +102,9 @@ export function SinglePokemonPage(props) {
                     <button id="dirPadDownButton" onClick={lastPokemon}></button>
                 </div>
                 <div id="homeButtonDiv">
-                <Link to={`/Allpokemon/`}><button id="homeButton"></button></Link>
+                    <Link to={`/Allpokemon`}>
+                        <button id="homeButton"></button>
+                    </Link>
                 </div>
             </div>
             {/* <div>

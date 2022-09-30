@@ -4,7 +4,7 @@ import { HomePage, AllPokemonPage, SinglePokemonPage } from "./pages";
 function App() {
   return (
     <BrowserRouter>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <NavLink to={"/"}>Home</NavLink>
@@ -13,7 +13,7 @@ function App() {
             <NavLink to={"/allpokemon"}>AllPokemonPage</NavLink>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
       <Routes>
         <Route path="/" element={<HomePage />} />

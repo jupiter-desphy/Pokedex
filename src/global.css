@@ -9,6 +9,10 @@
   --square-buttons-color: #7ca9f7;
 }
 
+* {
+  font-family:'Press Start 2P', cursive;
+}
+
 #allPokemon {
   align-items: left;
   max-width: 1126px;

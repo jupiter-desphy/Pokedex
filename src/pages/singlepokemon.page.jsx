@@ -4,13 +4,19 @@ import { useParams, Link } from "react-router-dom";
 
 export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
+    let [list, setList] = useState([]);
     let { id } = useParams();
     let [count, setCount] = useState(Number(id))
 
     function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())
-            .then((pokemon) => setItem(pokemon.pokemon.find((poke) => poke.id == count)))
+            .then((pokemon) => {
+                setItem(pokemon.pokemon.find((poke) => poke.id == count));
+                setList(pokemon.pokemon)
+
+            })
+            
             .catch((err) => console.error(err));
     }
 
@@ -46,7 +52,7 @@ export function SinglePokemonPage(props) {
     return (
         <div id="PokedexPage">
             <div id="pokedexLogo">
-                <Link to={`/Allpokemon`}>
+                <Link to={`/allpokemon`}>
                     <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
                 </Link>
             </div>

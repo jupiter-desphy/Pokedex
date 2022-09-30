@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { filterPokemonByName, getListOf } from "../helpers/poke.helpers";
+import { filterPokemonByWeaknesses, filterPokemonByType, getListOf } from "../helpers/poke.helpers";
 import { Link } from "react-router-dom";
 
 export function AllPokemonPage(props) {
     let [list, setList] = useState([]);
-    let [searchPokemon, setSearchPokemon] = useState("");
+    let [searchType, setSearchType] = useState("");
+    let [searchWeaknesses, setSearchWeaknesses] = useState("");
 
     function catchEmAll() {
         fetch("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
@@ -17,9 +18,12 @@ export function AllPokemonPage(props) {
         catchEmAll();
     }, []);
 
-    let pokemonByName = filterPokemonByName(list, searchPokemon)
-    let names = getListOf(list, "name");
-    // let { avg_score, total, latest } = getFilmStats(pokemonByName);
+    let pokemonByType = filterPokemonByType(list, searchType)
+    let pokemonByWeaknesses = filterPokemonByWeaknesses(pokemonByType, searchWeaknesses)
+    let types = getListOf(list, "type");
+    let weaknessesArr = getListOf(list, "weaknesses");
+
+    // let { avg_score, total, latest } = getFilmStats(pokemonByType);
 
     return (
         <div id="allPokemon">
@@ -28,8 +32,10 @@ export function AllPokemonPage(props) {
                     <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
                 </Link>
             </div>
+
+
             <ul id="photoList">
-                {pokemonByName.map((pokemon) => {
+                {pokemonByWeaknesses.map((pokemon) => {
                     return (
                         <li key={pokemon.id}>
                             <Link to={`/pokemon/${pokemon.id}`}><img src={`${pokemon.img}`} alt={`${pokemon.name}`} /></Link>
@@ -37,31 +43,59 @@ export function AllPokemonPage(props) {
                     );
                 })}
             </ul>
+
+
+
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+
             <br></br>
             <form>
                 <div className="form-group">
-                    <label htmlFor="searchPokemon">
-                        Select Pokemon:{" "}
-                    </label>
-                    <select
-                        name="searchPokemon"
-                        id="searchPokemon"
-                        value={searchPokemon}
-                        onChange={(event) => setSearchPokemon(event.target.value)}
-                    >
-                        <option value="">All</option>
-                        {names.map((name, idx) => {
-                            return (
-                                <option key={name + idx} value={name}>
-                                    {name}
-                                </option>
-                            );
-                        })}
-                    </select>
+                    <div>
+                        <label htmlFor="searchType">
+                            Select Type:{" "}
+                        </label>
+                        <select
+                            name="searchType"
+                            id="searchType"
+                            value={searchType}
+                            onChange={(event) => setSearchType(event.target.value)}
+                        >
+                            <option value=""> All</option>
+                            {types.map((type, idx) => {
+                                return (
+                                    <option key={type + idx} value={type}>
+                                        {type}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                    </div>
+                    <br>
+                    </br>
+
+                    <div>
+                        <label htmlFor="searchWeaknesses">
+                            Select Weaknesses:{" "}
+                        </label>
+                        <select
+                            name="searchWeaknesses"
+                            id="searchWeaknesses"
+                            value={searchWeaknesses}
+                            onChange={(event) => setSearchWeaknesses(event.target.value)}
+                        >
+                            <option value=""> All</option>
+                            {weaknessesArr.map((weaknesses, idx) => {
+                                return (
+                                    <option key={weaknesses + idx} value={weaknesses}>
+                                        {weaknesses}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                    </div>
+
+                    <br></br>
                 </div>
             </form>
         </div>

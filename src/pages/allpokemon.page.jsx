@@ -22,7 +22,7 @@ export function AllPokemonPage(props) {
     // let { avg_score, total, latest } = getFilmStats(pokemonByName);
 
     return (
-        <div>
+        <div id="allPokemon">
             <h1>POKEDEX</h1>
             <form>
                 <div className="form-group">
@@ -46,12 +46,12 @@ export function AllPokemonPage(props) {
                     </select>
                 </div>
             </form>
-            
-            <ul>
+
+            <ul id="photoList">
                 {pokemonByName.map((pokemon) => {
                     return (
                         <li key={pokemon.id}>
-                            <Link to={`/pokemon/${pokemon.id}`}>{pokemon.name}</Link>
+                            <Link to={`/pokemon/${pokemon.id}`}><img src={`${pokemon.img}`} alt={`${pokemon.name}`} /></Link>
                         </li>
                     );
                 })}

@@ -81,7 +81,7 @@ export function SinglePokemonPage(props) {
                         <u>WEAKNESSES</u>
                         <br></br>
                         <br></br>
-                        {item.weaknesses?.map((weakness, idx) => {
+                        {item.weaknesses?.slice(0,4).map((weakness, idx) => {
                             return <li key={idx}>{weakness}</li>;
                         })}
                     </ul>
@@ -99,8 +99,8 @@ export function SinglePokemonPage(props) {
                 <div id="dirPadDown" className="dirPad">
                     <button id="dirPadDownButton" onClick={lastPokemon}></button>
                 </div>
-                <div>
-                <Link to={`/Allpokemon/`}><button id="HomeButton"></button></Link>
+                <div id="homeButtonDiv">
+                <Link to={`/Allpokemon/`}><button id="homeButton"></button></Link>
                 </div>
             </div>
             {/* <div>

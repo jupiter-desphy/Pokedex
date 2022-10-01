@@ -12,6 +12,7 @@ export function SinglePokemonPage(props) {
     // let { state } = useLocation();
     // let [count, setCount] = useState(Number(state.id || 1));
 
+    
     /*function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())
@@ -22,14 +23,14 @@ export function SinglePokemonPage(props) {
             .catch((err) => console.error(err));
     }*/
 
-    function catchPokemon() {
-        setItem(list.find((poke) => poke.id == count));
-    }
-
     async function fetchPokemon() {
         let res = await fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`);
         let data = await res.json();
         setList(data.pokemon)
+    }
+
+    function catchPokemon() {
+        setItem(list.find((poke) => poke.id == count));
     }
 
     useEffect(() => {
@@ -55,7 +56,6 @@ export function SinglePokemonPage(props) {
 
     function randomPokemon() {
         setCount(Math.floor(Math.random() * 151) + 1);
- 
     }
 
 
@@ -100,28 +100,51 @@ export function SinglePokemonPage(props) {
                         <u>WEAKNESSES</u>
                         <br></br>
                         <br></br>
+                        {/* slice to limit to 4 list items */}
                         {item.weaknesses?.slice(0, 4).map((weakness, idx) => {
                             return <li key={idx}>{weakness}</li>;
                         })}
                     </ul>
                 </div>
                 <div id="dirPadRight" className="dirPad">
-                    <button id="dirPadRightButton" onClick={nextPokemon}>
+                    <button
+                        id="dirPadRightButton"
+                        onClick={nextPokemon}
+                        className="invisible-button"
+                    >
                     </button>
                 </div>
                 <div id="dirPadLeft" className="dirPad">
-                    <button id="dirPadLeftButton" onClick={lastPokemon}></button>
+                    <button
+                        id="dirPadLeftButton"
+                        onClick={lastPokemon}
+                        className="invisible-button"
+                    >
+                    </button>
                 </div>
                 <div id="dirPadUp" className="dirPad">
-                    <button id="dirPadUpButton" onClick={nextPokemon}></button>
+                    <button
+                        id="dirPadUpButton"
+                        onClick={nextPokemon}
+                        className="invisible-button"
+                    >
+                    </button>
                 </div>
                 <div id="dirPadDown" className="dirPad">
-                    <button id="dirPadDownButton" onClick={lastPokemon}></button>
+                    <button 
+                        id="dirPadDownButton"
+                        className="invisible-button"
+                        onClick={lastPokemon}
+                    >
+                    </button>
                 </div>
-                <div id="homeButtonDiv">
-                    {/* <Link to={`/Allpokemon`}> */}
-                        <button id="homeButton" onClick={randomPokemon}></button>
-                    {/* </Link>  */}
+                <div id="randomButtonDiv">
+                    <button
+                        id="randomButton"
+                        className="invisible-button"
+                        onClick={randomPokemon}
+                    >
+                    </button>
                 </div>
             </div>
         </div>

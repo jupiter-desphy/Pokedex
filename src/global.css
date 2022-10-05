@@ -213,9 +213,11 @@ justify-self: center;
 
 @media only screen and (max-width: 600px) {
 
+  body {
+    font-size: .7rem;
+  }
 
-
-  body, #searchType, #searchWeaknesses {
+  #searchType, #searchWeaknesses {
     font-size: .7rem;
   }
 
@@ -229,8 +231,12 @@ justify-self: center;
     grid-template-columns: 41px 12.5px 40px 24px 18px 14px 16px 16px 60px 59px 10px 59px 30px;
     grid-template-rows: 85px 9px 46px 9px 20px 18px 19px 17px 13px 4px 20px 4px 22px;
   }
-  .pokemonImg {
+
+  #screenImg {
     width: 4.5rem;
+  }
+  .pokemonImg {
+    width: 2.5rem;
 
   }
 

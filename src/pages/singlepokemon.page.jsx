@@ -67,7 +67,7 @@ export function SinglePokemonPage(props) {
                     <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
                 </Link>
             </div>
-            <div style={{ backgroundImage: "url(/pokedexImg.png)" }} id="pokedex">
+            <div style={{ backgroundImage: "url(/images/pokedexImg.png)" }} id="pokedex">
                 <div id="mainScreen">
                     <img id="screenImg" src={`${item.img}`} alt={`${item.name}`} />
                 </div>

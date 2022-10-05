@@ -14,8 +14,6 @@ export function filterPokemonByWeaknesses(list, weaknesses) {
 }
 
 export function getListOf(list, prop) {
-
     return [...new Set(list.reduce((allItems, pokemon)=> allItems.concat (pokemon[prop]),[])
     )];
-
 }

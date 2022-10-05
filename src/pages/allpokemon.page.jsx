@@ -23,8 +23,6 @@ export function AllPokemonPage(props) {
     let types = getListOf(list, "type");
     let weaknessesArr = getListOf(list, "weaknesses");
 
-    // let { avg_score, total, latest } = getFilmStats(pokemonByType);
-
     return (
         <div id="allPokemon">
             <div id="pokedexLogo">
@@ -74,7 +72,7 @@ export function AllPokemonPage(props) {
                     <br>
                     </br>
 
-                    <div>
+                    <div className="filters">
                         <label htmlFor="searchWeaknesses">
                             Select Weaknesses:{" "}
                         </label>

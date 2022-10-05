@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --main-bg-color: #fe0065;
+  --charcoal-font: rgb(62, 63, 62);
   --secondary-bg-color: #f2f2f2;
   --green-font: rgb(222, 251, 177);
   --secondary-screen-bg-color: #9e9d9d;
@@ -62,6 +62,7 @@ li {
   line-height: 1.2;
 }
 
+
 #background {
   background-repeat: no-repeat;
   width:'100vw'; 
@@ -99,6 +100,7 @@ body {
 
 #PokedexPage {
   font-family:'Press Start 2P', cursive;
+
 }
 
 #logoImg {
@@ -113,11 +115,11 @@ body {
   padding-block: 2rem;
   border-radius: 5px rgb(129, 196, 41);
   background-repeat: no-repeat;
-  height: 65vh;
+  height: 100%;
   background-size: contain;
-  margin: 1px;  
+  margin: 0px;  
   grid-template-columns: 82px 25px 80px 48px 36px 28px 32px 32px 120px 118px 20px 118px;
-  grid-template-rows: 138px 18px 92px 18px 40px 36px 38px 34px 26px 8px 40px 8px;
+  grid-template-rows: 138px 18px 92px 18px 40px 36px 38px 34px 26px 8px 40px 8px 12px;
 }
 
 #mainScreen {
@@ -155,8 +157,8 @@ justify-self: center;
 #typeScreen {
   grid-column: 10 / 11;
   grid-row: 3 / 4;
-  /* align-self: center; */
-  justify-self: start;
+  align-self: left;
+  /* justify-self: start; */
   color: var(--green-font);
   padding-left: 13px;
 }
@@ -165,8 +167,11 @@ justify-self: center;
   grid-column: 11 / 13;
   grid-row: 3 / 4;
   justify-self: start;
+  align-self: flex-start;
+  justify-content: first baseline;
   font-size: .7rem;
   color: var(--green-font);
+
   padding-left: 15px;
 }
 

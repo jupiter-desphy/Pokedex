@@ -12,7 +12,7 @@ export function SinglePokemonPage(props) {
     // let { state } = useLocation();
     // let [count, setCount] = useState(Number(state.id || 1));
 
-    
+
     /*function catchPokemon() {
         fetch(`https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`)
             .then((res) => res.json())

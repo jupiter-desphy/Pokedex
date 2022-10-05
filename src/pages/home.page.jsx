@@ -5,7 +5,7 @@ export function HomePage(props) {
     return (
         <div 
         // style={{ backgroundImage: "")" }}
-         id="homePage">
+         id="homePage" >
         
             <div id="pokedexLogo">
                 <Link to={`/allpokemon`}>

@@ -9,6 +9,11 @@
   font-family:'Press Start 2P', cursive;
   margin: 0;
   padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  font-size: 16px; /* set root element size for rem to work on small screen safari */
 }
 
 body {
@@ -19,6 +24,7 @@ body {
   justify-content: start;
   align-items: center;
   background-color: white;
+
 }
 
 ul {
@@ -37,6 +43,10 @@ li {
   justify-content: center;
   justify-self: center;
   margin: 3.1rem 3rem 2rem 2rem;
+}
+
+#logoImg {
+  width: 500px;
 }
 
 /* -- HOME PAGE -- */
@@ -81,13 +91,6 @@ li {
   margin: 0px;
 }
 
-#screenImg {
-  width: 9rem;
-}
-
-#logoImg {
-  width: 500px;
-}
 #pokedex {
   width: calc(400px * 2);
   font-size: .7rem;
@@ -96,6 +99,10 @@ li {
   background-size: contain;
   grid-template-columns: 82px 25px 80px 48px 36px 28px 32px 32px 120px 118px 20px 118px;
   grid-template-rows: 170px 18px 92px 18px 40px 36px 38px 34px 26px 8px 40px 8px 44px;
+}
+
+#screenImg {
+  width: 9rem;
 }
 
 #mainScreen {
@@ -145,7 +152,7 @@ justify-self: center;
   padding-left: 15px;
 }
 
-/* --INVISIBLE BUTTONS-- */
+                  /* --INVISIBLE BUTTONS-- */
 
 .invisible-button {
   background-color: transparent;
@@ -241,8 +248,15 @@ justify-self: center;
   }
 
   #heightScreen, #weightScreen {
+    /* -webkit-text-size-adjust: 100%; */
     font-size: .25rem;
   } 
+
+  /* #heightP {
+    -webkit-text-size-adjust: 100%;
+    font-size: .25rem;
+
+  } */
 
   #dirPadRightButton, #dirPadLeftButton {
     width: 18px;

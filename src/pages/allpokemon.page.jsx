@@ -49,9 +49,9 @@ export function AllPokemonPage(props) {
             <br></br>
             <form>
                 <div className="form-group">
-                    <div>
+                    <span className="filters">
                         <label htmlFor="searchType">
-                            Select Type:{" "}
+                            Type:{" "}
                         </label>
                         <select
                             name="searchType"
@@ -68,13 +68,11 @@ export function AllPokemonPage(props) {
                                 );
                             })}
                         </select>
-                    </div>
-                    <br>
-                    </br>
+                    </span>
 
-                    <div className="filters">
+                    <span className="filters">
                         <label htmlFor="searchWeaknesses">
-                            Select Weaknesses:{" "}
+                            Weaknesses:{" "}
                         </label>
                         <select
                             name="searchWeaknesses"
@@ -91,9 +89,7 @@ export function AllPokemonPage(props) {
                                 );
                             })}
                         </select>
-                    </div>
-
-                    <br></br>
+                    </span>
                 </div>
             </form>
         </div>

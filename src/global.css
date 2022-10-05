@@ -1,16 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-  --charcoal-font: rgb(62, 63, 62);
-  --secondary-bg-color: #f2f2f2;
+  --charcoal-font: rgb(50, 50, 50);
   --green-font: rgb(222, 251, 177);
-  --secondary-screen-bg-color: #9e9d9d;
-  --main-buttons-color: #585858;
-  --square-buttons-color: #7ca9f7;
 }
 
 * {
   font-family:'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: white;
+}
+
+ul {
+  list-style: inside square;
+}
+
+li {
+  line-height: 1.2;
 }
 
 /* -- LOGO -- */
@@ -45,9 +61,6 @@
   max-width: 1126px;
 }
 
-ul {
-  list-style: inside square;
-}
 
 #photoList {
   list-style: inside none;
@@ -58,10 +71,7 @@ ul {
   display: inline;
 }
 
-li {
-  line-height: 1.2;
-}
-
+/* pokedex */
 
 #background {
   background-repeat: no-repeat;
@@ -71,55 +81,21 @@ li {
   margin: 0px;
 }
 
-#pokemonImg {
+#screenImg {
   width: 9rem;
-  justify-self: center;
-  align-self: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  background-color: white;
-}
-
-/* pokedex */
-
-#PokedexPage {
-  font-family:'Press Start 2P', cursive;
-
 }
 
 #logoImg {
   width: 500px;
 }
 #pokedex {
-  /* height: 500px; */
   width: calc(400px * 2);
-  font-family:'Press Start 2P', cursive;
   font-size: .7rem;
   display: grid;
-  padding-block: 2rem;
-  border-radius: 5px rgb(129, 196, 41);
   background-repeat: no-repeat;
-  height: 100%;
   background-size: contain;
-  margin: 0px;  
   grid-template-columns: 82px 25px 80px 48px 36px 28px 32px 32px 120px 118px 20px 118px;
-  grid-template-rows: 138px 18px 92px 18px 40px 36px 38px 34px 26px 8px 40px 8px 12px;
+  grid-template-rows: 170px 18px 92px 18px 40px 36px 38px 34px 26px 8px 40px 8px 44px;
 }
 
 #mainScreen {
@@ -134,6 +110,7 @@ justify-self: center;
   grid-row: 10 / 13;
   align-self: center;
   justify-self: center;
+  color: var(--charcoal-font);
 }
 
 #heightScreen {
@@ -157,8 +134,6 @@ justify-self: center;
 #typeScreen {
   grid-column: 10 / 11;
   grid-row: 3 / 4;
-  align-self: left;
-  /* justify-self: start; */
   color: var(--green-font);
   padding-left: 13px;
 }
@@ -166,14 +141,11 @@ justify-self: center;
 #weaknessScreen {
   grid-column: 11 / 13;
   grid-row: 3 / 4;
-  justify-self: start;
-  align-self: flex-start;
-  justify-content: first baseline;
-  font-size: .7rem;
   color: var(--green-font);
-
   padding-left: 15px;
 }
+
+/* --INVISIBLE BUTTONS-- */
 
 .invisible-button {
   background-color: transparent;
@@ -229,18 +201,56 @@ justify-self: center;
 }
 
 #randomButtonDiv {
-  grid-column: 2 / 3;
+  grid-column: 1 / 4;
   grid-row: 1 / 2;
   justify-self: center;
 }
 
 #randomButton {
-  width: 65px;
-  height: 50px;
+  width: 70px;
+  height: 80px;
 }
 
-/* @media only screen and (max-width: 600px) {
-  #pokedex {
-    width: 90%;
+@media only screen and (max-width: 600px) {
+
+
+
+  body, #searchType, #searchWeaknesses {
+    font-size: .7rem;
   }
-} */
+
+  #logoImg {
+    width: 250px;
+  }
+
+  #pokedex {
+    width: 400px;
+    font-size: .3rem;
+    grid-template-columns: 41px 12.5px 40px 24px 18px 14px 16px 16px 60px 59px 10px 59px 30px;
+    grid-template-rows: 85px 9px 46px 9px 20px 18px 19px 17px 13px 4px 20px 4px 22px;
+  }
+  .pokemonImg {
+    width: 4.5rem;
+
+  }
+
+  #heightScreen, #weightScreen {
+    font-size: .25rem;
+  } 
+
+  #dirPadRightButton, #dirPadLeftButton {
+    width: 18px;
+    height: 15px;
+  }
+
+  #dirPadUpButton, #dirPadDownButton {
+    width: 16px;
+    height: 18px;
+  }
+  
+  #randomButton {
+    width: 35px;
+    height: 40px;
+  }
+
+}

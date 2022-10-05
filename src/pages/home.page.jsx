@@ -26,9 +26,9 @@ export function HomePage(props) {
                         Welcome to my Pokedex app!
                         <br></br>
                         <br></br>
-                        Pokedexes are an important part of the Pokemon Universe!
+                        Pokedexes play an iconic role in the Pokemon Universe!
                         In the anime, Ash would encounter a new Pokemon every episode and scanned it using a Pokedex to get the scoop.
-                        It was an iconic card when Pokemon first launched its trading card game.
+                        It was its own card when Pokemon first launched its trading card game.
                         On Game Boy, it took the form as the handheld it was played on!  
 
                         <br></br>
@@ -42,3 +42,4 @@ export function HomePage(props) {
         </div>
     );
 }
+``

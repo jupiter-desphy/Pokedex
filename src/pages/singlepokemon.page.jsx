@@ -69,7 +69,7 @@ export function SinglePokemonPage(props) {
             </div>
             <div style={{ backgroundImage: "url(/pokedexImg.png)" }} id="pokedex">
                 <div id="mainScreen">
-                    <img id="pokemonImg" src={`${item.img}`} alt={`${item.name}`} />
+                    <img className="pokemonImg, screenImg" src={`${item.img}`} alt={`${item.name}`} />
                 </div>
                 <div id="nameScreen">
                     {item.name} <br></br>
@@ -93,7 +93,6 @@ export function SinglePokemonPage(props) {
                         })}
                     </ul>
                 </div>
-
                 <div id="weaknessScreen">
                     <ul>
                         <br></br>
@@ -106,32 +105,32 @@ export function SinglePokemonPage(props) {
                         })}
                     </ul>
                 </div>
-                <div id="dirPadRight" className="dirPad">
+                <div id="dirPadRight">
                     <button
                         id="dirPadRightButton"
-                        onClick={nextPokemon}
                         className="invisible-button"
+                        onClick={nextPokemon}
                     >
                     </button>
                 </div>
-                <div id="dirPadLeft" className="dirPad">
+                <div id="dirPadLeft">
                     <button
                         id="dirPadLeftButton"
-                        onClick={lastPokemon}
                         className="invisible-button"
+                        onClick={lastPokemon}
                     >
                     </button>
                 </div>
-                <div id="dirPadUp" className="dirPad">
+                <div id="dirPadUp">
                     <button
                         id="dirPadUpButton"
-                        onClick={nextPokemon}
                         className="invisible-button"
+                        onClick={nextPokemon}
                     >
                     </button>
                 </div>
-                <div id="dirPadDown" className="dirPad">
-                    <button 
+                <div id="dirPadDown">
+                    <button
                         id="dirPadDownButton"
                         className="invisible-button"
                         onClick={lastPokemon}

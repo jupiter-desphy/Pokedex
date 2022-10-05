@@ -36,7 +36,7 @@ export function AllPokemonPage(props) {
                 {pokemonByWeaknesses.map((pokemon) => {
                     return (
                         <li key={pokemon.id}>
-                            <Link to={`/pokemon/${pokemon.id}`}><img src={`${pokemon.img}`} alt={`${pokemon.name}`} /></Link>
+                            <Link to={`/pokemon/${pokemon.id}`}><img className="pokemonImg" src={`${pokemon.img}`} alt={`${pokemon.name}`} /></Link>
                         </li>
                     );
                 })}
@@ -82,7 +82,7 @@ export function AllPokemonPage(props) {
                             value={searchWeaknesses}
                             onChange={(event) => setSearchWeaknesses(event.target.value)}
                         >
-                            <option value=""> All</option>
+                            <option className="option" value=""> All</option>
                             {weaknessesArr.map((weaknesses, idx) => {
                                 return (
                                     <option key={weaknesses + idx} value={weaknesses}>

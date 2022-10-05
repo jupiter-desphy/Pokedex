@@ -137,13 +137,23 @@ export function SinglePokemonPage(props) {
                     >
                     </button>
                 </div>
-                <div id="randomButtonDiv">
+                <div id="blackButtonDiv">
                     <button
-                        id="randomButton"
+                        id="blackButton"
                         className="invisible-button"
                         onClick={randomPokemon}
                     >
                     </button>
+                </div>
+                <div id="blueCircButtonDiv">
+                    <Link to={`/`}>
+                        <button
+                            id="blueCircButton"
+                            className="invisible-button"
+                            onClick={randomPokemon}
+                        >
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

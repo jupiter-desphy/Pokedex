@@ -1,13 +1,11 @@
-# CSS Pokédex
+# Pokédex by Jupiter
 
 ## Pokédex built with CSS HTML and Javascript using a React Front End.
 ### Fetched data from the Pokedex API by [biuni](https://github.com/Biuni/PokemonGO-Pokedex).
 
 ---
 
----
-
-<img width="360px" src=""/>
+<img width="360px" src="public/images/screenshot.png"/>
 
 ---
 

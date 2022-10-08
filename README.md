@@ -7,7 +7,7 @@ Using React JS, this pokémon index fetches data from a public API to give our h
 Whether a newcomer who's never heard of a pokédex or a longtime fan indulging in nostalgia, you're invited to play with this fictional device made interactive!
 
 ##
-    * *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
+\* *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
 ##
 ## Demo
 Click [here](https://pokedex-nine-red.vercel.app/) or the screenshot below to demo.

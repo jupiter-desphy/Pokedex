@@ -13,10 +13,9 @@ Click [here](https://pokedex-nine-red.vercel.app/) to demo.
 ### [Landing Page](https://pokedex-nine-red.vercel.app/)
   You're welcomed with a brief explanation of the role pokédexes play in Pokémon lore. 
 
-### [Poster Page](https://pokedex-nine-red.vercel.app/poster)
-  Choose which pokémon to scan with your pokédex!
-[<img width="800px" src="public/images/ScrShotFiltered.png"/>](https://pokedex-nine-red.vercel.app/poster)
-  Fans will recognize the grid-like fashion pokémon are often showcased on posters and other merchandise. Narrow your options using the type and/or weakness filters at the foot of the page.
+### [Poster Page](https://pokedex-nine-red.vercel.app/allpokemon)
+  [<img width="800px" src="public/images/ScrShotFiltered.png"/>](https://pokedex-nine-red.vercel.app/poster)
+  Choose which pokémon to scan with your pokédex! Fans will recognize the grid-like fashion pokémon are often showcased on posters and other merchandise. Narrow your options using the type and/or weakness filters at the foot of the page.
 
 ### [Pokédex Page](https://pokedex-nine-red.vercel.app/pokemon/1)
   Find statistics on your selected pokémon. Navigate using the directional pad or find the "random" pokémon button.

@@ -64,11 +64,10 @@ li {
 }
 
 #startButton {
-  padding:10px 35px;
+  padding:8px 35px;
   color: white;
   background-color: var(--charcoal-font);
   border-radius: 20px;
-  /* font-size: .9rem; */
 }
 
 /* -- POKEMON POSTER PAGE -- */

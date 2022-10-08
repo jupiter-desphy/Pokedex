@@ -6,7 +6,6 @@ Using React, this pokémon index fetches data from a public API to give our hero
 
 ##
 \* *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
-##
 
 [<img width="900px" src="public/images/screenshot.png"/>](https://pokedex-nine-red.vercel.app/)
 Click [here](https://pokedex-nine-red.vercel.app/) to demo.
@@ -16,7 +15,7 @@ Click [here](https://pokedex-nine-red.vercel.app/) to demo.
 
 ### [Poster Page](https://pokedex-nine-red.vercel.app/poster)
   Choose which pokémon to scan with your pokédex!
-  <img width="900px" src="public/images/ScrShotFiltered.png"/>
+[<img width="800px" src="public/images/ScrShotFiltered.png"/>](https://pokedex-nine-red.vercel.app/poster)
   Fans will recognize the grid-like fashion pokémon are often showcased on posters and other merchandise. Narrow your options using the type and/or weakness filters at the foot of the page.
 
 ### [Pokédex Page](https://pokedex-nine-red.vercel.app/pokemon/1)

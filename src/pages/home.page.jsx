@@ -9,7 +9,7 @@ export function HomePage(props) {
         
             <div id="pokedexLogo">
                 <Link to={`/allpokemon`}>
-                    <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
+                    <img src="/images//Logo.webp" alt="pokedex header logo" id='logoImg' />
                 </Link>
             </div>
             <div id="byJupiter">              
@@ -33,7 +33,8 @@ export function HomePage(props) {
 
                         <br></br>
                         <br></br>
-                        <Link to={`/allpokemon`}>Enter Here</Link>
+                        <br></br>
+                        Push <Link to={`/allpokemon`}><button id="startButton">START</button></Link> to begin!
                     </p>
                 </div>
 

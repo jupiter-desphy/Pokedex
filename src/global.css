@@ -63,6 +63,14 @@ li {
   text-align: center;
 }
 
+#startButton {
+  padding:10px 35px;
+  color: white;
+  background-color: var(--charcoal-font);
+  border-radius: 20px;
+  /* font-size: .9rem; */
+}
+
 /* -- POKEMON POSTER PAGE -- */
 
 #allPokemon {
@@ -304,7 +312,7 @@ justify-self: center;
   }
 
   #weaknessScreen {
-    padding-left: 8px;
+    padding-left: 7.5px;
   }
   
   #heightScreen, #weightScreen {

@@ -64,7 +64,7 @@ export function SinglePokemonPage(props) {
         <div id="PokedexPage">
             <div id="pokedexLogo">
                 <Link to={`/allpokemon`}>
-                    <img src="/images/pokedex-logo.png" alt="pokedex header logo" id='logoImg' />
+                    <img src="/images//Logo.webp" alt="pokedex header logo" id='logoImg' />
                 </Link>
             </div>
             <div style={{ backgroundImage: "url(/images/pokedexImg.png)" }} id="pokedex">

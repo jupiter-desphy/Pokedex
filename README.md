@@ -1,14 +1,12 @@
 
 
 # Pokédex
-
-Using React, this pokémon index fetches data from a public API to give our hero (you!) helpful information fit for any aspiring pokémon master. Whether a newcomer who's never heard of a pokédex or a longtime fan indulging in nostalgia, you're invited to play with this fictional device made interactive!
-
-##
-<center> \* *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
+\* *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
 
 [<img width="900px" src="public/images/screenshot.png"/>](https://pokedex-nine-red.vercel.app/)
-Click [here](https://pokedex-nine-red.vercel.app/) to demo.</center>
+Using React, this pokémon index fetches data from a public API to give our hero (you!) helpful information fit for any aspiring pokémon master. Whether a newcomer who's never heard of a pokédex or a longtime fan indulging in nostalgia, you're invited to play with this fictional device made interactive!
+
+Click [here](https://pokedex-nine-red.vercel.app/) to demo.
 ## Site
 ### [Landing Page](https://pokedex-nine-red.vercel.app/)
   You're welcomed with a brief explanation of the role pokédexes play in Pokémon lore. 

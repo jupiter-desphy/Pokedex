@@ -5,16 +5,16 @@
 Using React, this pokémon index fetches data from a public API to give our hero (you!) helpful information fit for any aspiring pokémon master. Whether a newcomer who's never heard of a pokédex or a longtime fan indulging in nostalgia, you're invited to play with this fictional device made interactive!
 
 ##
-\* *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
+<center> \* *  *Technologies used include* ***React***, ***JavaScript***, ***HTML***, *and* ***CSS***. * * 
 
 [<img width="900px" src="public/images/screenshot.png"/>](https://pokedex-nine-red.vercel.app/)
-Click [here](https://pokedex-nine-red.vercel.app/) to demo.
+Click [here](https://pokedex-nine-red.vercel.app/) to demo.</center>
 ## Site
 ### [Landing Page](https://pokedex-nine-red.vercel.app/)
   You're welcomed with a brief explanation of the role pokédexes play in Pokémon lore. 
 
 ### [Poster Page](https://pokedex-nine-red.vercel.app/allpokemon)
-  [<img width="800px" src="public/images/ScrShotFiltered.png"/>](https://pokedex-nine-red.vercel.app/poster)
+  [<img width="800px" src="public/images/ScrShotFiltered.png"/>](https://pokedex-nine-red.vercel.app/allpokemon)
   Choose which pokémon to scan with your pokédex! Fans will recognize the grid-like fashion pokémon are often showcased on posters and other merchandise. Narrow your options using the type and/or weakness filters at the foot of the page.
 
 ### [Pokédex Page](https://pokedex-nine-red.vercel.app/pokemon/1)

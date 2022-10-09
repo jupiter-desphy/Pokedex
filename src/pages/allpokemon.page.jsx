@@ -36,7 +36,9 @@ export function AllPokemonPage(props) {
                 {pokemonByWeaknesses.map((pokemon) => {
                     return (
                         <li key={pokemon.id}>
-                            <Link to={`/pokemon/${pokemon.id}`}><img className="pokemonImg" src={`${pokemon.img}`} alt={`${pokemon.name}`} /></Link>
+                            <Link to={`/pokemon/${pokemon.id}`}>
+                                <img className="pokemonImg" src={`${pokemon.img}`} alt={`${pokemon.name}`} />
+                            </Link>
                         </li>
                     );
                 })}

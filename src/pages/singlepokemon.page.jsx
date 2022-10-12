@@ -6,8 +6,21 @@ export function SinglePokemonPage(props) {
     let [item, setItem] = useState({});
     let [list, setList] = useState([]);
 
+    let pokeball = {
+        img: '/images/Logo.webp"/images/Logo.webp'
+    }
     let { id } = useParams();
     let [count, setCount] = useState(Number(id));
+    let [key1, setKey1] = useState(pokeball);
+    let [key2, setKey2] = useState({});
+    let [key3, setKey3] = useState({});
+    let [key4, setKey4] = useState({});
+    let [key5, setKey5] = useState({});
+    let [key6, setKey6] = useState({});
+    let [key7, setKey7] = useState({});
+    let [key8, setKey8] = useState({});
+    let [key9, setKey9] = useState({});
+    let [key10, setKey10] = useState({});
 
     // let { state } = useLocation();
     // let [count, setCount] = useState(Number(state.id || 1));
@@ -33,16 +46,27 @@ export function SinglePokemonPage(props) {
         setItem(list.find((poke) => poke.id == count));
     }
 
+    function choosePokemon1() {
+        setKey1(list.find((poke) => poke.id == count));
+        console.log(key1)
+    }
+
     useEffect(() => {
         if (list.length == 0) fetchPokemon();
         else catchPokemon();
     }, [count, list]);
 
+    useEffect(() => {
+        choosePokemon1();
+    }, [key1])
+
     function nextPokemon() {
         if (count >= 151) {
             setCount(1);
+            
         } else {
             setCount(count + 1);
+            console.log(key1)
         }
     }
 
@@ -58,6 +82,11 @@ export function SinglePokemonPage(props) {
         setCount(Math.floor(Math.random() * 151) + 1);
     }
 
+    // function pok1Chosen() {
+    //     if (key1) {
+    //     <img className="chosen" src={`${key1?.img}`} alt={`${item.name}`} />
+    //     }
+    // }
 
 
     return (
@@ -150,11 +179,72 @@ export function SinglePokemonPage(props) {
                         <button
                             id="blueCircButton"
                             className="invisible-button"
-                            onClick={randomPokemon}
                         >
                         </button>
                     </Link>
                 </div>
+                <div id="keyboard">
+                    <button
+                        id="key1"
+                        className="invisible-button key"
+                        onClick={choosePokemon1}
+                    >
+                    </button>
+                    <button
+                        id="key2"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key3"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key4"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key5"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key6"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key7"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key8"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key9"
+                        className="invisible-button key"
+                    >
+                    </button>
+                    <button
+                        id="key10"
+                        className="invisible-button key"
+                    >
+                    </button>
+
+                </div>
+            </div>
+            <div id="selectedPokemon">
+                <div>
+                    {/* {pok1Chosen} */}
+                    {/* <img className="chosen" src={`${key1?.img}`} alt={`${key1?.name}`} /> */}
+                </div>
+                        
+
             </div>
         </div>
     );
